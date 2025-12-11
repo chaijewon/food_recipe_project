@@ -12,7 +12,14 @@
                 </div>
             </div>
         </div>
-        
+        <div class="row text-center" style="margin-top: 20px">
+            <ul class="pagination">
+                <li v-if="food_data.startPage > 1"><a class="a-link">&laquo;</a></li>
+                <li v-for="i in range(food_data.startPage, food_data.endPage)" :key="i"
+                    :class="food_data.curpage == i ? 'active' : ''"><a class="a-link">{{i}}</a></li>
+                <li v-if="food_data.endPage < food_data.totalpage"><a class="a-link">&raquo;</a></li>
+            </ul>
+        </div>
     </div>
 </template>
 <script>
@@ -52,6 +59,18 @@
         return {
             food_data,
             foodListData
+        }
+      },
+      methods:{
+        range(start,end){
+            const len=end-start
+            const arr=[]
+            for(let i=0;i<=len;i++)
+            {
+               arr[i]=start
+               start++
+            }
+            return arr
         }
       }
 
