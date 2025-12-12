@@ -96,6 +96,7 @@ export default {
             state.food_detail=payload
         },
         SET_FIND_DATA(state,payload){
+            console.log(payload)
             state.find_data=payload
         }
     },
@@ -179,8 +180,8 @@ export default {
               ss:'검색어'
             }
         */
-        async foodFindData({commit},column,page,ss){
-            console.log("foodFindData"+column+" "+page+" "+ss)
+        async foodFindData({commit},{column,page,ss}){
+            console.log("foodFindData:"+column+" "+page+" "+ss)
             await axios.get('http://localhost/food/find_vue/',{
                 params:{
                     column,page,ss
