@@ -5,7 +5,7 @@
                 <tbody>
                     <tr>
                         <td width=30% class="text-center" rowspan="8">
-                            <img th:src="${vo.poster}" style="width: 220px;height: 300px">
+                            <img :src="vo.poster" style="width: 220px;height: 300px">
                         </td>
                         <td colspan="2">
                             <h3>{{vo.name}}&nbsp;<span style="color:orange;">{{vo.score}}</span></h3>
