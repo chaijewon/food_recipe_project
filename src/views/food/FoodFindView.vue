@@ -59,7 +59,7 @@ import { defineComponent,onMounted,computed } from 'vue';
    export default defineComponent({
       setup(){
         const ss=ref("")
-        const column=ref("") // v-model와 연결되는 변수
+        const column=ref("all") // v-model와 연결되는 변수
         const store=useStore()
         const find_data=computed(()=> store.state.foods.find_data)
         // action함수 호출 
