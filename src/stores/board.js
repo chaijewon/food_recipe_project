@@ -64,7 +64,23 @@ export default{
          })
          console.log(data)
          commit('SET_BOARD_DETAIL',data)
-       }
-       // 글쓰기 
+       },
+       // 글쓰기
+       async boardInsert({dispatch},board){
+         await axios.post('http://localhost/board/insert_vue/',board)
+         dispatch('boardListData',1)
+       } 
     }
+    /*
+       데이터 갱신 => commit : forward
+       데이터 갱신이 없는 경우 : sendReirect 
+       = dispatch
+
+       commit : 데이터 읽기 
+               1. 목록 2. 상세보기 3. 수정 데이터
+               => forward  
+       dispatch : 데이터 처리
+               1. 글쓰기 2. 수정 3. 삭제
+               => redirect 
+    */
 }
