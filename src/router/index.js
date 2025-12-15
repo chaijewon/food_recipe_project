@@ -5,6 +5,7 @@ import FoodFindView from '@/views/food/FoodFindView.vue'
 import BoardListView from '@/views/board/BoardListView.vue'
 import BoardDetailView from '@/views/board/BoardDetailView.vue'
 import BoardInsertView from '@/views/board/BoardInsertView.vue'
+import BoardUpdateView from '@/views/board/BoardUpdateView.vue'
 
 const routes=[
     {
@@ -37,6 +38,11 @@ const routes=[
         path:'/board/insert',
         name:'board_insert',
         component:BoardInsertView
+    },
+    {
+        path:'/board/update/:no',
+        name:'board_update',
+        component:BoardUpdateView
     }
 ]
 const router=createRouter({
