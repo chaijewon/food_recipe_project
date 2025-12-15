@@ -47,7 +47,7 @@
                 </tr>
                 <tr>
                     <td class="text-right">
-                        <a href="/" class="btn btn-sm btn-primary">목록</a>
+                        <router-link href="/vue/main" class="btn btn-sm btn-primary">목록</router-link>
                     </td>
                 </tr>
                 
